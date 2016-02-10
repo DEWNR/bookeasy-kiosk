@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" class="no-js" prefix="og: http://ogp.me/ns#" ng-app="kioskApp">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!--                    O
+                               OO                              OO
+                           O   OO                              OO   O
+                           OO  OO OO                         OOOO  OO
+                      OO   OOO OOOOO                         OOOO OOO   OO
+                  O    OOO OOO OOOOO                         OOOOOOO  OOOO  OO
+                  OOOO  OOOOOOOOOOOO                         OOOOOOOOOOOO OOOO
+              OOO OOOOOOOOOOOOOOOOOO                         OOOOOOOOOOOOOOOO
+              OOOOOOOOOOOOOOOOOOOOO                          OOOOOOOOOOOOOOO  OOO
+               OOOOOOOOOOOOOOOOOO O                          OOOOOOOOOOOOOOOOOOOO
+             OOOOOOOOOOOOOOOOOO O                              OOOOOOOOOOOOOOOOOOOO
+          OOOOOOOOOOOOOOOOOOOOO OO                            OOOOOOOOOOOOOOOOOOOOOOO
+          OOOOOOOOOOOOOOOOOOOOO OO                            OO OOOOOOOOOOOOOOOOOOOO
+         OOOOOOOOOOOOOOOOOOOOO  OO                           OO   OOOOOOOOOOOOOOOOOOO
+         OOOOOOOOOOOOOOOOOOOOOO OOO                          OO  OOOOOOOOOOOOOOOOOOOOOO
+         OOOOOOOOOOOOOOOOOOOOOOOOOOO      O OOOOO           OOOOOOOOOOOOOOOOOOOOOOOOO
+        OOOOOOOOOOOOOOOOOOOOOOOOOOOO       O OOOOOO         O OOOOOOOOOOOOOOOOOOOOOOOOOO
+        OOOOOOOOOOOOOOOOOOOOOOOO O  O     O OOOOOOOO       O   OOOOOOOOOOOOOOOOOOOOOOOOO
+          OOOOOOOOOOOOOOOOOOOOOO    O       OOOOO  OO     OO   OOOOOOOOOOOOOOOOOOOOOOOO
+        OOOOOOOOOOOOOOOOOOOOOOOOO      OOO  OOOOO   O    OO    OOOOOOOOOOOOOOOOOOOOOOOO
+          OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO         OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+          OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO         OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+           OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO         OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+             OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO         OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+             OOOOOOOOOOOOOOOOOOOOOOOOOOOOO          OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                OOOOOOOOOOOOOOOOOOOOOOOOOO           OOOOOOOOOOOOOOOOOOOOOOOOO
+                     OOOOOOOOOOOOOOOOOOO OO          O OOOOOOOOOOOOOOOOOOOO
+                        OOOOOOOOOOOOOOOO  O         OO  OOOOOOOOOOOOOOO
+                              OOO OOOOO   OO        OO   OOOOOOOO O
+                                         OOO       OOOO
+                                     O OO   O     O    OOO
+                               OOOOOOO OOOO OO   OOOOOOOOOOOOOOO
+                              OOOOOOOOO OOOO OOOOOO OOOOOOOOOOOOO
+                               OO OOOOOOO O   OOO O   O OOOOO OOO
+                               OO OOOOO OOOO O O OOO OOOOO OO OOO
+                                    OOOOOOO O OO  O OOOOOOOO
+                                    OOOOOOOOOOOOOOOOOOOOOOOO
+                                      OOOOOOOOOOOOOOOOOOO
+                                         OOOOOO OOOOOOO
+
+
+                                                                                     -->
+
+        <!-- Stylesheets -->
+
+        <link href="css/main.css" rel="stylesheet">
+
+        <!-- End Stylesheets -->
+
+    </head>
+
+
+    <body ng-controller="mainController">
+
+        <div class="wrapper">
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#region">Region</a></li>
+                <li><a href="#entry">Entry</a></li>
+            </ul>
+
+
+            <!-- Main content -->
+
+            <main role="main" ng-view>
+            </main>
+
+            <!-- End main content -->
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+        <script>
+
+            // create the module and name it kioskApp
+        var kioskApp = angular.module('kioskApp', ['ngRoute']);
+
+        // configure our routes
+        kioskApp.config(function($routeProvider) {
+            $routeProvider
+
+                // route for the home page
+                .when('/', {
+                    templateUrl: 'pages/home.html',
+                    controller:  'mainController'
+                })
+
+                // route for the region page
+                .when('/region', {
+                    templateUrl: 'pages/region.html',
+                    controller:  'regionController'
+                })
+
+                // route for the accommodation page
+                .when('/accom', {
+                    templateUrl: 'pages/accom.html',
+                    controller:  'accomController'
+                })
+
+                // route for the entry page
+                .when('/entry', {
+                    templateUrl: 'pages/entry.html',
+                    controller:  'entryController'
+                });
+        });
+
+        // create the controller and inject Angular's $scope
+        kioskApp.controller('mainController', function($scope) {
+            // create a message to display in our view
+            $scope.message = 'Everyone come and see how good I look!';
+        });
+
+        kioskApp.controller('regionController', function($scope) {
+            $scope.message = 'I am a region page.';
+        });
+
+        kioskApp.controller('accomController', function($scope) {
+            $scope.message = 'I am an accommodation page.';
+        });
+
+        kioskApp.controller('entryController', function($scope) {
+            $scope.message = 'I am an entry page.';
+        });
+
+        </script>
+
+
+    </body>
+
+</html>

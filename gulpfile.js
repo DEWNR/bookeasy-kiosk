@@ -21,11 +21,6 @@ var _ = require('lodash'),
     jsList,   // List of JavaScripts to combine
     minifyCss = require('gulp-minify-css'),     // Minify CSS
     minifyCssOptions,
-    rashtache,
-    rashtacheConfig,
-    mustache = require('gulp-mustache-plus'),
-    mustachify,
-    data,
     passthrough = require('gulp-empty'),    // Pass through an unaltered stream; useful for conditional processing
     paths,  // Frequently used file paths
     rename = require('gulp-rename'), // Rename output files
@@ -68,7 +63,7 @@ var _ = require('lodash'),
 
     paths.src.root = src;
 
-    paths.src.html = src + "patterns/";
+    paths.src.html = src + "html/";
 
     paths.src.images = src + "images/";
 
@@ -104,14 +99,6 @@ htmlminOptions = {
     conservativeCollapse: true,
     minifyJS: true,
     minifyCSS: true
-};
-
-
-
-rashtacheConfig = {
-    site_prefix: 'bk',
-    image_path: 'images/',
-    share_path: 'http://www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f88a7f3c-df7e-430a-825c-24cfa8dec9a8/'
 };
 
 
@@ -204,68 +191,6 @@ if (!argv.production) {
 
 
 
-
-// Setup rastache function
-
-rashtache = function (folders) {
-    return folders.reduce(function (prevObject, folder) {
-        var objectify;
-
-        objectify = function (folder) {
-            var files = fs.readdirSync(folder);
-
-            // Read and combine all the files in the folder
-            return files.reduce(function (object, file) {
-                var filePath = folder + '/' + file,
-                    isFolder,
-                    isJSON,
-                    property,
-                    toCamelCase,
-                    value;
-
-                // Convert file/folder names to camelCase (assumimg names only
-                // use lowercase letters or dashes)
-                toCamelCase = function(string) {
-                    string = string.replace(/\.(mustache|json)$/, '');
-                    string = string.replace(/(\-)(\w)/g, function (match, dash, letter) {
-                        return letter.toUpperCase();
-                    });
-                    return string;
-                };
-
-                // Set the property name
-                property = toCamelCase(file);
-
-                // Check to see if the 'file' is actually a directory
-                if (fs.statSync(filePath).isDirectory()) {
-                    // Recursively process it
-                    value = objectify(filePath);
-                } else {
-                    // Read the file
-                    value = fs.readFileSync(filePath, 'utf-8');
-
-                    // Parse and merge the file if it's JSON, otherwise add the value to the object
-                    if ((/\.json$/).test(filePath)) {
-                        value = JSON.parse(value);
-                    }
-                }
-
-                object[property] = value;
-                return object;
-            }, {});
-        };
-
-        // Process the current folder and merge it with the object
-        return _.merge(prevObject, objectify(folder));
-    }, {});
-};
-
-// Load the data, starting the the furthest ancestor
-data = rashtache([paths.src.html]);
-data.json = _.merge(data.json, rashtacheConfig);
-
-
-
 // Remove destination folder in production mode
 
 gulp.task('clean', function () {
@@ -295,12 +220,9 @@ gulp.task('html', function () {
             message: 'Error: a manifest must be present when running this task in production mode'
         });
     } else {
-        data = rashtache([paths.src.html]);
-        data.json = _.merge(data.json, rashtacheConfig);
 
         return gulp.src(paths.src.html + '**/*.html')
             // Load the data, starting the the furthest ancestor
-            .pipe(mustache(data.json, {}, data.partials))
             .pipe(fingerprint(manifest, fingerprintOptions))
             .pipe(htmlmin(htmlminOptions))
             .pipe(gulp.dest(paths.dest));
