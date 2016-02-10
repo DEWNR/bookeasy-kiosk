@@ -62,13 +62,13 @@
     </head>
 
 
-    <body ng-controller="mainController">
+    <body>
 
         <div class="wrapper">
 
             <!-- Primary navigation -->
 
-            <!-- <nav class="primary-navigation">
+            <nav class="primary-navigation" ng-show="showNav">
 
                 <ul>
                     <li class="primary-navigation__item">
@@ -76,20 +76,17 @@
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#region">Region<i class="icon-region"></i></a>
+                        <a class="primary-navigation__link" href="#region">Book camping<i class="icon-region"></i></a>
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#entry">Entry<i class="icon-entry"></i></a>
+                        <a class="primary-navigation__link" href="#entry">Pay for your park entry<i class="icon-entry"></i></a>
                     </li>
                 </ul>
 
-            </nav> -->
+            </nav>
 
             <!-- End primary navigation -->
-
-
-
 
 
             <!-- Site header -->
@@ -159,25 +156,34 @@
         });
 
         // create the controller and inject Angular's $scope
-        kioskApp.controller('mainController', function($scope) {
-            // create a message to display in our view
+        kioskApp.controller("mainController", function ($scope, $location, $rootScope) {
             $scope.message = 'Everyone come and see how good I look!';
             $scope.mainClass = 'main--home';
+            $scope.$location = $location;
+            $rootScope.showNav = false;
+            console.log($rootScope);
         });
 
-        kioskApp.controller('regionController', function($scope) {
+        kioskApp.controller("regionController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am a region page.';
             $scope.mainClass = 'main--internal';
+            $scope.$location = $location;
+            $rootScope.showNav = true;
+            console.log($rootScope);
         });
 
-        kioskApp.controller('accomController', function($scope) {
+        kioskApp.controller("accomController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am an accommodation page.';
             $scope.mainClass = 'main--internal';
+            $scope.$location = $location;
+            $rootScope.showNav = true;
         });
 
-        kioskApp.controller('entryController', function($scope) {
+        kioskApp.controller("entryController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am an entry page.';
             $scope.mainClass = 'main--internal';
+            $scope.$location = $location;
+            $rootScope.showNav = true;
         });
 
         </script>
