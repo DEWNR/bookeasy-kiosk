@@ -11,6 +11,23 @@
 
 
 
- /* = Base styling = */
+/* = Base styling = */
 
- @import "base.page";
+@import "base.main";
+@import "base.page";
+
+
+
+
+/* = Generic styling = */
+
+@import "generic.dewnrgr";
+
+
+
+
+/* = Components = */
+
+@import "components.site-header";
+@import "components.primary-navigation";
+@import "components.quickjump";

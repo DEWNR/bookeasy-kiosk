@@ -67,6 +67,8 @@ var _ = require('lodash'),
 
     paths.src.images = src + "images/";
 
+    paths.src.fonts = src + "fonts/";
+
     paths.src.js = src + "js/";
 
     paths.src.sass = src + "sass/";
@@ -227,6 +229,15 @@ gulp.task('html', function () {
             .pipe(htmlmin(htmlminOptions))
             .pipe(gulp.dest(paths.dest));
     }
+});
+
+// Copy fonts
+
+gulp.task('fonts', function () {
+
+    return gulp.src(paths.src.fonts + '**/*')
+        .pipe(gulp.dest(paths.dest + 'fonts/'));
+
 });
 
 // Watch for changes to the HTML and/or mustache partials

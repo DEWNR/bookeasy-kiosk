@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    #PRIMARY-NAVIGATION
+\*------------------------------------*/
+
+
+/*nav*/.primary-navigation {
+    float: left;
+    padding: 40px 0 0;
+    width: percentage(400 / 2560);
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+    /*li*/.primary-navigation__item {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    /*a*/.primary-navigation__link {
+        // font-family: Dewnrger, "Frutiger W01", Helvetica, Arial, sans-serif;
+        font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        color: #fff;
+        display: block;
+        text-decoration: none;
+
+        i {
+            background-color: #08713e;
+            border-radius: 1em;
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.58);
+            display: block;
+            height: 135px;
+            margin: 0.4em auto 1em;
+            width: 135px;
+
+            &.icon-home {
+                background-image: url("../images/innes-icon-home.svg");
+                background-size: cover;
+            }
+
+            &.icon-region {
+                background-image: url("../images/innes-icon-region.svg");
+                background-size: cover;
+            }
+
+            &.icon-entry {
+                background-image: url("../images/innes-icon-entry.svg");
+                background-size: cover;
+            }
+        }
+
+        &:hover {
+            i {
+                background-color: darken(#08713e, 5%);
+            }
+        }
+    }

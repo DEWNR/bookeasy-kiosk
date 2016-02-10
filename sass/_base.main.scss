@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    #MAIN
+\*------------------------------------*/
+
+
+main {
+    float: left;
+    width: percentage(1800 / 2560);
+    min-height: 480px;
+}
+
+
+.main--home {
+    float: none;
+    margin: 0 auto;
+    padding: 180px 0 0;
+    text-align: center;
+}
+
+
+.main__title {
+
+    .main--home & {
+        font-size: 120px;
+        width: percentage(1200 / 1800);
+        margin: 0 auto 0.4em;
+    }
+}
