@@ -159,30 +159,25 @@
         kioskApp.controller("mainController", function ($scope, $location, $rootScope) {
             $scope.message = 'Everyone come and see how good I look!';
             $scope.mainClass = 'main--home';
-            $scope.$location = $location;
             $rootScope.showNav = false;
-            console.log($rootScope);
         });
 
         kioskApp.controller("regionController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am a region page.';
             $scope.mainClass = 'main--internal';
-            $scope.$location = $location;
             $rootScope.showNav = true;
-            console.log($rootScope);
+
         });
 
         kioskApp.controller("accomController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am an accommodation page.';
             $scope.mainClass = 'main--internal';
-            $scope.$location = $location;
             $rootScope.showNav = true;
         });
 
         kioskApp.controller("entryController", function ($scope, $location, $rootScope) {
             $scope.message = 'I am an entry page.';
             $scope.mainClass = 'main--internal';
-            $scope.$location = $location;
             $rootScope.showNav = true;
         });
 
