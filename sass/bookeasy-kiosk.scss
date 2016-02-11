@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #QUICKJUMP
+\*------------------------------------*/
+
+#content {
+
+    div.BE.region-gadget {
+
+        // top tabs
+        div.tabs-group {
+            height: auto;
+            line-height: normal;
+
+            span.label {
+                display: none;
+            }
+
+            a {
+                background-color: #fff;
+                border: 0;
+                border-radius: 0;
+                color: #333;
+                margin: 0;
+                padding: 0.8em 1.4em;
+
+                &.current {
+                    background-color: #08713e;
+                    color: #fff;
+                }
+            }
+
+        }
+
+    }
+
+}

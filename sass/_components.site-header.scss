@@ -9,8 +9,9 @@
     top: 0;
     right: 0;
     z-index: 10;
+    width: percentage(350 / 2560);
 }
 
     /*img*/.site-header__logo {
-        width: 280px;
+        width: 100%;
     }
