@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xml:lang="en" class="no-js" prefix="og: http://ogp.me/ns#" ng-app="kioskApp">
+<html lang="en" xml:lang="en" class="no-js" prefix="og: http://ogp.me/ns#" data-ng-app="kioskApp">
 
     <head>
 
@@ -68,25 +68,28 @@
 
             <!-- Primary navigation -->
 
-            <nav class="primary-navigation" ng-show="showNav">
+            <nav class="primary-navigation" data-ng-cloak data-ng-show="showNav">
 
                 <ul>
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#">Home<i class="icon-home"></i></a>
+                        <a class="primary-navigation__link" href="#/home">Home<i class="icon-home"></i></a>
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#region">Book camping<i class="icon-region"></i></a>
+                        <a class="primary-navigation__link" href="#/region">Book camping<i class="icon-region"></i></a>
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#entry">Pay for your park entry<i class="icon-entry"></i></a>
+                        <a class="primary-navigation__link" href="#/tours/67456">Pay for your park entry<i class="icon-entry"></i></a>
                     </li>
                 </ul>
 
             </nav>
 
             <!-- End primary navigation -->
+
+
+
 
 
             <!-- Site header -->
@@ -111,7 +114,38 @@
 
             <!-- Main content -->
 
-            <main class="main" ng-view ng-class="mainClass" role="main">
+            <main class="main" data-ng-controller="MainController" data-ng-class="mainClass" role="main">
+
+
+                <div class="homepage" data-ng-show="mode == 'home'">
+                    <h1 class="main__title">Welcome to Innes National Park</h1>
+
+                    <nav class="quickjump">
+
+                        <ul>
+                            <li class="quickjump__item">
+                                <a class="quickjump__link" href="#/region">Book camping<i class="icon-region"></i></a>
+                            </li>
+
+                            <li class="quickjump__item">
+                                <a class="quickjump__link" href="#/tours/67456">Pay for your park entry<i class="icon-entry"></i></a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+
+                <div class="gadget" data-ng-cloak data-ng-show="mode == 'region'">
+                    <iframe class="gadget__iframe    js-region-gadget-iframe" data-ng-src="iframe.html"></iframe>
+                </div>
+
+
+               <div class="details-gadget" data-ng-cloak data-ng-controller="DetailsController" data-ng-show="mode == 'details'">
+                    <div class="js-details-gadget" id="content"></div>
+                </div>
+
+
             </main>
 
             <!-- End main content -->
@@ -119,71 +153,94 @@
         </div>
 
 
-        <script type="text/javascript" src="//www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f88a7f3c-df7e-430a-825c-24cfa8dec9a8/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="//www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f88a7f3c-df7e-430a-825c-24cfa8dec9a8/jquery-191min.js"></script>
+
         <script type="text/javascript" src="//gadgets.impartmedia.com/gadgets.jsz?key=7e5893292834eb2b34cd1d9b11437df9"></script>
 
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 
         <script>
 
             // create the module and name it kioskApp
-        var kioskApp = angular.module('kioskApp', ['ngRoute']);
+            var kioskApp = angular.module('kioskApp', []);
 
-        // configure our routes
-        kioskApp.config(function($routeProvider) {
-            $routeProvider
+            kioskApp.controller('MainController', function ($scope, $location, $rootScope) {
 
-                // route for the home page
-                .when('/', {
-                    templateUrl: 'pages/home.html',
-                    controller:  'mainController'
-                })
+                $scope.$location = $location;
+                $scope.mode = "home";
+                $scope.mainClass = "main--home";
+                $rootScope.showNav = true;
 
-                // route for the region page
-                .when('/region', {
-                    templateUrl: 'pages/region.html',
-                    controller:  'regionController'
-                })
+                // Listen for hash changes
+                $scope.$on("$locationChangeSuccess", function () {
+                    var detailsRE = /\/[a-z]{5}\/(\d{5})/,
+                        hash = $location.path();
 
-                // route for the accommodation page
-                .when('/accom', {
-                    templateUrl: 'pages/accom.html',
-                    controller:  'accomController'
-                })
+                    if (detailsRE.test(hash)) {
+                        $scope.operatorID = hash.match(detailsRE)[1];
+                        $scope.mode = "details"
+                        $scope.mainClass = "main--internal";
+                        $rootScope.showNav = true;
 
-                // route for the entry page
-                .when('/entry', {
-                    templateUrl: 'pages/entry.html',
-                    controller:  'entryController'
+                    } else if (hash == "/region") {
+                        $scope.mode = "region";
+                        $scope.mainClass = "main--internal";
+                        $rootScope.showNav = true;
+
+                    } else if (hash == "/home") {
+                        $scope.mode = "home";
+                        $scope.mainClass = "main--home";
+                        $rootScope.showNav = false;
+
+                    } else {
+                        $location.path("home");
+                    }
                 });
-        });
 
-        // create the controller and inject Angular's $scope
-        kioskApp.controller("mainController", function ($scope, $location, $rootScope) {
-            $scope.message = 'Everyone come and see how good I look!';
-            $scope.mainClass = 'main--home';
-            $rootScope.showNav = false;
-        });
+                // Add a message listener to track iFrame height changes
+                window.addEventListener("message", function (event) {
+                    if (typeof event.data.height === 'number') {
+                        $('.js-region-gadget-iframe').height(event.data.height);
+                    }
+                })
+            });
 
-        kioskApp.controller("regionController", function ($scope, $location, $rootScope) {
-            $scope.message = 'I am a region page.';
-            $scope.mainClass = 'main--internal';
-            $rootScope.showNav = true;
 
-        });
+            // Details gadget controller
+            kioskApp.controller('DetailsController', function($scope) {
+                var bookingDate = new Date(),
+                    gadgetOptions = {
+                        vcID: 188,
+                        defaultDate: bookingDate,
+                        period: 1,
+                        showHoverInline: true,
+                        showQuantity: false,
+                        thumbsInGrid: false
+                    },
+                    gadgetSelector = '.js-details-gadget';
 
-        kioskApp.controller("accomController", function ($scope, $location, $rootScope) {
-            $scope.message = 'I am an accommodation page.';
-            $scope.mainClass = 'main--internal';
-            $rootScope.showNav = true;
-        });
+                $scope.name = 'DetailsController';
 
-        kioskApp.controller("entryController", function ($scope, $location, $rootScope) {
-            $scope.message = 'I am an entry page.';
-            $scope.mainClass = 'main--internal';
-            $rootScope.showNav = true;
-        });
+                $scope.$on("$locationChangeSuccess", function () {
+                    if ($scope.$parent.mode === 'details') {
+                        $(gadgetSelector).empty();
+                        BE.gadget.details(gadgetSelector, gadgetOptions);
+                    }
+                });
+            });
+
+
+            // Initialise the cart gadget
+            (function () {
+                var gadgetOptions = {
+                        vcID:"188",
+                        bookingURL:"https://www.environment.sa.gov.au/parks/checkout",  // Consider changing this to a dedicated page for the kiosk
+                        autoCollapse:true
+                    },
+                    gadgetSelector = '#toolbar-cart';
+
+                BE.gadget.cart(gadgetSelector, gadgetOptions);
+            }())
 
         </script>
 
