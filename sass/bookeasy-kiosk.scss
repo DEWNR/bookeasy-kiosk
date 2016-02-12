@@ -6,6 +6,8 @@
 
     div.BE.region-gadget {
 
+        font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+
         // top tabs
         div.tabs-group {
             height: auto;
@@ -27,6 +29,63 @@
                     background-color: #08713e;
                     color: #fff;
                 }
+            }
+
+        }
+
+    }
+
+
+    div.prices-grid {
+
+        div.type-group table tbody tr {
+
+            &.odd {
+               background: rgba(255, 255, 255, 0.8);
+
+               td {
+                   background: none;
+               }
+            }
+
+
+            &.even {
+                background: rgba(255, 255, 255, 0.85);
+
+                td {
+                    background: none;
+                }
+            }
+
+            td.property {
+                background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 59%,rgba(255,255,255,0) 61%);
+
+                .name {
+                    color: #333;
+                    font-size: 26px;
+                    padding: 0.85em 0 0;
+                }
+
+                .address {
+                    color: #333;
+                    font-size: 16px;
+                }
+
+                div.thumb {
+                    border: 0;
+                    height: 96px;
+                    overflow: hidden;
+                    padding: 0;
+                    width: 150px;
+
+                    img {
+                        height: 150px;
+                        position: relative;
+                        top: -25px;
+                        width: 150px;
+                    }
+                }
+
             }
 
         }
