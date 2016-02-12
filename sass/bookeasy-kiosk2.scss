@@ -1,0 +1,539 @@
+/* Combine the variables with the styles for bookeasy.css file */
+
+@import "bookeasy.variables";       // Import the regional variables
+@import "bookeasy1280";        // Import the styles for screens 1280px or larger
+@import "bookeasy640";         // Import additional styles for screens 640px or less
+
+
+
+
+
+
+/* = Bookeasy over-rides = */
+
+#content.js-region-gadget .region-gadget.BE {
+    font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+}
+
+div.search-gadget.BE div.date span.input {
+    padding: 0.6em;
+}
+
+body.region-gadget.BE {
+    background: none;
+}
+
+.even {
+    background-color: #fff;
+}
+
+select,
+option {
+    -webkit-appearance: none; /* To gain control over the appearance on WebKit */
+    -moz-appearance: none; /* To gain control over the appearance on Gecko */
+}
+
+input,
+select {
+    border: 0;
+}
+
+.js-region-gadget div.region-gadget.BE div.tabs-group {
+    height: 2.3em;
+}
+
+// .js-region-gadget div.region-gadget.BE div.tabs-group a {
+//     height: 1em;
+// }
+div.region-gadget.BE div.tabs-group a {
+    height: 0.4em;
+    &.price,
+    &.map {
+        padding: 0.8em 1.4em;
+    }
+}
+
+.map:hover {
+    background-color: lighten($main-brand-color, 10%);  //$light-brand-color
+}
+
+.label,
+.total,
+.date {
+    color: #fff;
+}
+
+.input .pseudo {
+    color: #000;
+}
+
+.property .name {
+    font-weight: bold;
+    padding-top: 1.5rem;
+}
+
+td.date {
+    margin: auto;
+    min-width: 100px;
+    padding-top: 13px;
+    text-align: center;
+}
+
+td.price {
+    color: #000;
+}
+
+a.day {
+    // float: left;
+    //padding-right: 4px;
+    vertical-align: bottom;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+}
+
+a.date {
+    // float: left;
+    //padding-right: 4px;
+    vertical-align: bottom;
+    text-transform: uppercase;
+}
+
+a.month {
+    // float: left;
+    vertical-align: bottom;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+}
+
+.input select {
+    color: #000;
+}
+
+.im-pricebutton-label {
+    font-weight: bold;
+    font-size: 78%;
+}
+
+.js-region-gadget,
+.js-details-gadget {
+    margin-right: 4rem;
+}
+
+.js-region-gadget div.region-gadget.BE div.tabs-group a {
+    background-color: #fff;
+}
+
+.embedded-search div.search-gadget.BE div.date span.input {
+    border: 0;
+}
+
+.embedded-search div.search-gadget.BE div.date span.input {
+    background: none;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+#content div.details-gadget.BE div.priceGrid table thead td a,
+#content div.details-gadget.BE div.priceGrid div.type-group table tr.inline-header td a,
+#content div.region-gadget.BE div.prices-grid div.type-group table thead td a,
+#content div.region-gadget.BE div.prices-grid div.type-group table tr.inline-header td a {
+    display: inline-block;
+}
+
+.js-region-gadget div.region-gadget.BE div.prices-grid div.type-group table thead td a.day {
+    font-size: 1rem;
+}
+
+.js-region-gadget div.region-gadget.BE div.prices-grid div.type-group table thead td a.date {
+    font-size: 1rem;
+}
+
+.js-region-gadget div.region-gadget.BE div.prices-grid div.type-group table thead td a.month {
+    font-size: 1rem;
+}
+
+
+div.region-gadget.BE div.tabs-group a.current span,
+#content div.BE.region-gadget div.prices-grid table thead td,
+#content div.BE.region-gadget div.prices-grid table thead td a {
+    color: #fff;
+}
+
+#content div.BE.details-gadget div.priceGrid table thead td,
+#content div.BE.region-gadget div.prices-grid table thead td {
+    background-color: darken($main-brand-color, 5%);
+}
+
+// div.region-gadget.BE div.prices-grid div.type-group table thead td {
+//     padding: 12px 10px;
+// }
+
+#content div.BE.details-gadget div.priceGrid table tbody tr:nth-of-type(odd) td {
+    width: 76%;
+}
+
+#content div.BE.details-gadget div.priceGrid table tbody tr td.name a {
+    font-weight: bold;
+}
+
+span.book.im-pricebutton-label {
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+#content div.BE.details-gadget div.priceGrid table tbody tr:nth-of-type(odd) td,
+#content div.BE.region-gadget div.prices-grid table tbody tr:nth-of-type(odd) td {
+    background-color: #fff;
+    &.total {
+        background-color: $main-brand-color;
+    }
+}
+
+#content div.BE.details-gadget div.prices-grid table tbody tr td,
+#content div.BE.region-gadget div.prices-grid table tbody tr td {
+    border-bottom: #e7e7e7 solid 1px;
+}
+
+#content div.BE.search-gadget select,
+#content div.BE.search-gadget input {
+    height: 2.61em;
+    padding: 0.5em;
+}
+
+.js-details-gadget div.search-gadget.BE div.date span.input,
+.js-region-gadget div.search-gadget.BE div.date span.input {
+    height: 2.01em;  //23pt
+}
+
+div.search-gadget.BE div.date span.input span.pseudo {
+    margin-top: 0.4em;
+}
+
+.zzzzzz {
+    transition: transform 1s;
+}
+
+#content div.BE.details-gadget div.prices-grid table thead td.date,
+#content div.BE.details-gadget div.prices-grid table .inline-header td.date,
+#content div.BE.region-gadget div.prices-grid table thead td.date,
+#content div.BE.region-gadget div.prices-grid table .inline-header td.date {
+    padding: 12px 10px;
+}
+
+#content div.BE.details-gadget {
+    color: #fff;
+}
+
+#content div.BE.details-gadget div.priceGrid table thead td {}
+
+.ng-scope div.details-gadget.BE div.priceGrid table tbody tr td.sold span,
+.js-details-gadget div.details-gadget.BE div.prices-grid div.type-group table tbody tr td.sold span,
+.js-region-gadget div.region-gadget.BE div.prices-grid div.type-group table tbody tr td.sold span {
+    font-size: 1rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: 0.006em;
+}
+
+
+
+/* = BE OverlayContent over-rides = */
+
+.add-to-cart-form {
+    input,
+    select {
+        padding: 0.5em;
+    }
+    .date {
+        color: #000;
+    }
+}
+
+.ng-scope {
+
+    /* Overlay head Operator-name  :  campground  */
+    div#wdOverlayContent div.add-to-cart-form div.name span.operator-name, div#wdOverlayContent div.item-details div.name span.operator-name {
+        color: #fff;
+        //float: left;
+        background: darken($main-brand-color, 10%) url('../images/overlay-header-mid.png') no-repeat right center;
+        padding: .3em 36px .3em 30px;
+        margin-left: -0.8rem;
+        z-index: 2;
+    }
+
+    /* Overlay head item-name  :  camp site  */
+    div#wdOverlayContent div.add-to-cart-form div.name span.item-name,
+    div#wdOverlayContent div.item-details div.name span.item-name {
+        background-color: $main-brand-color;
+    }
+
+    /* accordian-header */
+    div#wdOverlayContent div.add-to-cart-form div.accordian div.accordian-header {
+        background: $main-brand-color;
+        color: #fff;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
+
+    /* accordian-header icon expanded*/
+    .add-to-cart-form .accordian.expanded .accordian-header {
+        &:before {
+            content: " - ";
+            display: inline-block;
+            background-color: #fff;
+            color: $main-brand-color;
+            width: 1.6rem;
+            text-align: center;
+            margin-right: 8px;
+            font-size: 1rem;
+            font-weight: 900;
+            font-family: arial, helvetica, tahoma, verdana, sans-serif;
+        }
+    }
+    /* accordian-header icon collapsed*/
+    .add-to-cart-form .accordian.collapsed .accordian-header {
+        &:before {
+            content: " + ";
+            display: inline-block;
+            background-color: #fff;
+            color: $main-brand-color;
+            width: 1.6rem;
+            text-align: center;
+            margin-right: 8px;
+            font-size: 1rem;
+            font-weight: 900;
+            font-family: arial, helvetica, tahoma, verdana, sans-serif;
+        }
+    }
+
+
+
+    /* accordian-content */
+    div#wdOverlayContent div.add-to-cart-form div.accordian div.accordian-content {
+        padding: 7px;
+        background: #D3E4D5;
+    }
+
+    /* Next button */
+    div#wdOverlayContent div.add-to-cart-form div.addButton a.next,
+    div#wdOverlayContent div.item-details div.addButton a.next,
+    div#wdOverlayContent div.add-to-cart-form div.removeItem a.next,
+    div#wdOverlayContent div.item-details div.removeItem a.next,
+    div#wdOverlayContent div.add-to-cart-form div.addProgress a.next,
+    div#wdOverlayContent div.item-details div.addProgress a.next {
+        background-color: $main-brand-color;
+        &:hover {
+            background-color: lighten($main-brand-color, 5%);
+        }
+    }
+
+    div#wdOverlayContent div.add-to-cart-form div.addButton a,
+    div#wdOverlayContent div.item-details div.addButton a,
+    div#wdOverlayContent div.add-to-cart-form div.removeItem a,
+    div#wdOverlayContent div.item-details div.removeItem a,
+    div#wdOverlayContent div.add-to-cart-form div.addProgress a,
+    div#wdOverlayContent div.item-details div.addProgress a {
+        background-image: none;
+    }
+
+    div#wdOverlayContent div.add-to-cart-form div.addButton a.next span,
+    div#wdOverlayContent div.item-details div.addButton a.next span,
+    div#wdOverlayContent div.add-to-cart-form div.removeItem a.next span,
+    div#wdOverlayContent div.item-details div.removeItem a.next span,
+    div#wdOverlayContent div.add-to-cart-form div.addProgress a.next span,
+    div#wdOverlayContent div.item-details div.addProgress a.next span {
+        display: block;
+        min-height: 24px;
+        padding: 5px 10px;
+        //background: transparent url('../img/cart-sprites.png') no-repeat -87px -122px;
+        //background: none;
+        padding-right: 54px;
+    }
+
+    /* Previous button */
+    div#wdOverlayContent div.add-to-cart-form div.addButton a.previous,
+    div#wdOverlayContent div.item-details div.addButton a.previous,
+    div#wdOverlayContent div.add-to-cart-form div.removeItem a.previous,
+    div#wdOverlayContent div.item-details div.removeItem a.previous,
+    div#wdOverlayContent div.add-to-cart-form div.addProgress a.previous,
+    div#wdOverlayContent div.item-details div.addProgress a.previous {
+        background-color: $main-brand-color;
+        &:hover {
+            background-color: lighten($main-brand-color, 5%);
+        }
+    }
+
+
+
+
+    /* close X button box*/
+    div#wdOverlayContent b#wdOverlayClose {
+        display: block;
+        cursor: pointer;
+        width: 29px;
+        height: 26px;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        background: none;
+        background-color: #333;
+        //background: transparent url('../img/cart-sprites.png') no-repeat -6px -5px;
+        &:hover {
+            background-color: #b00;
+        }
+    }
+}
+
+    /* close X button icon */
+b#wdOverlayClose:before {
+    content: "x";
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    font-family: tahoma, verdana, arial, sans-serif;
+    display: block;
+    padding-left: 7px;
+    padding-top: 0px;
+    line-height: 1.2rem;
+}
+
+.ng-scope {
+    div.shopping-cart.BE.auto-collapse div.cartItems div.totalDisplay {
+        width            : 50px;
+        border           : 0;
+        //background     : #37c url('../img/cart-sprites.png') repeat-x left -653px;
+        background       : none;
+        background-color : #37c;
+        color            : #333;
+        border-radius    : 0;
+    }
+
+
+    div.shopping-cart.BE.auto-collapse div.cartItems div.totalDisplay a {
+        top: 8px;
+        height: 40px;
+        margin-left: 8px;
+    }
+}
+
+#content div.BE.details-gadget div.priceGrid table tbody tr td.total a span.book {
+    padding: 0 8px;
+    margin: 0;
+    border-radius: 0;
+}
+
+.npsa {
+    // div#wdOverlayContent div.add-to-cart-form div.name,
+    div#wdOverlayContent div.item-details div.name,
+    div#wdOverlayContent div.add-to-cart-form div.price,
+    div#wdOverlayContent div.item-details div.price,
+    div#wdOverlayContent div.add-to-cart-form div.quantity,
+    div#wdOverlayContent div.item-details div.quantity,
+    div#wdOverlayContent div.add-to-cart-form div.date,
+    div#wdOverlayContent div.item-details div.date,
+    div#wdOverlayContent div.add-to-cart-form div.dateEnd,
+    div#wdOverlayContent div.item-details div.dateEnd,
+    div#wdOverlayContent div.add-to-cart-form div.adults,
+    div#wdOverlayContent div.item-details div.adults,
+    div#wdOverlayContent div.add-to-cart-form div.children,
+    div#wdOverlayContent div.item-details div.children,
+    div#wdOverlayContent div.add-to-cart-form div.infants,
+    div#wdOverlayContent div.item-details div.infants,
+    div#wdOverlayContent div.add-to-cart-form div.concessions,
+    div#wdOverlayContent div.item-details div.concessions,
+    div#wdOverlayContent div.add-to-cart-form div.students,
+    div#wdOverlayContent div.item-details div.students,
+    div#wdOverlayContent div.add-to-cart-form div.observers,
+    div#wdOverlayContent div.item-details div.observers,
+    div#wdOverlayContent div.add-to-cart-form div.startdate,
+    div#wdOverlayContent div.item-details div.startdate,
+    div#wdOverlayContent div.add-to-cart-form div.period,
+    div#wdOverlayContent div.item-details div.period,
+    div#wdOverlayContent div.add-to-cart-form div.quotedprice,
+    div#wdOverlayContent div.item-details div.quotedprice,
+    div#wdOverlayContent div.add-to-cart-form div.family,
+    div#wdOverlayContent div.item-details div.family {
+        margin-bottom: 1em;
+        width: 18%;
+    }
+}
+
+
+
+/* Your Cart page */
+.ng-scope {
+    div.shopping-cart.BE div.cartItems div.checkout a,
+    div.cartInOverlay div.cartItems div.checkout a {
+        border: 0;
+        background-image: none;
+    }
+}
+
+/* remove borders on buttons */
+.ng-scope {
+    div#wdOverlayContent div.add-to-cart-form div.addButton a,
+    div#wdOverlayContent div.item-details div.addButton a,
+    div#wdOverlayContent div.add-to-cart-form div.removeItem a,
+    div#wdOverlayContent div.item-details div.removeItem a,
+    div#wdOverlayContent div.add-to-cart-form div.addProgress a,
+    div#wdOverlayContent div.item-details div.addProgress a {
+        border: 0;
+    }
+}
+
+iframe,
+gadget__iframe {
+    min-height: 100%;
+    height: auto;
+}
+
+
+
+/* Calendar drop down */
+
+// .npsa,
+// .gadget__iframe {
+    body.BE-calendar-open div.wdDatePicker-Outer table.wdDatePicker_calendar td b,
+    body.BE-calendar-open div.wdDatePicker-Outer table.wdDatePicker_calendar td i {
+        width: 36px;  //28
+        height: 26px;
+    }
+
+    body.BE-calendar-open div.wdDatePicker-Outer table.wdDatePicker_calendar td.selected {
+        background: transparent url('//gadgets.impartmedia.com/img/search-sprites.png') no-repeat -164px -144px;
+    }
+
+    body.BE-calendar-open div.wdDatePicker-Outer {
+        font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+        padding: 6px 5px;
+    }
+
+    body.BE-calendar-open div.wdDatePicker-Outer table.wdDatePicker_calendar td.unavailable {
+        cursor: default;
+        background: transparent url('//gadgets.impartmedia.com/img/search-sprites.png') no-repeat -170px -97px;
+        background-color: rgba(142, 35, 35, 0.1);
+    }
+//}
+
+
+/* Checkout page for entering payment details */
+/* Hosted on parks so these changes would have to be moved to a stylesheet over there. */
+.content {
+    div.booking-gadget.BE div.personalDetails select,
+    div.booking-gadget.BE div.ccDetails select,
+    div.booking-gadget.BE div.personalDetails input,
+    div.booking-gadget.BE div.ccDetails input,
+    div.booking-gadget.BE div.personalDetails textarea,
+    div.booking-gadget.BE div.ccDetails textarea {
+        padding: 0.44rem 0.55rem;
+    }
+
+    input:not([type]),
+    input[type=email],
+    input[type=number],
+    input[type=password],
+    input[type=tel],
+    input[type=url],
+    input[type=text] {
+        padding: 0.5rem 0.4rem;
+    }
+}

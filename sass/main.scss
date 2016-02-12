@@ -7,6 +7,10 @@
  **/
 
 
+/* = Settings = */
+
+@import "settings.general";
+
 
 
 
@@ -29,6 +33,7 @@
 /* = Components = */
 
 @import "components.gadget";
-@import "components.site-header";
+@import "components.nav";
 @import "components.primary-navigation";
 @import "components.quickjump";
+@import "components.site-header";
