@@ -12,3 +12,7 @@ h1 {
     color: #fff;
     font-family: Dewnrger, "Frutiger W01", Helvetica, Arial, sans-serif;
 }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
