@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    #BOOKEASY SEARCH GADGET
+\*------------------------------------*/
+
+// scss-lint:disable all
+
+
+#content div.BE.region-gadget {
+
+    div.BE.search-gadget {
+        color: #333;
+        font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        background: #08713e;
+        background: rgba(8, 113, 62, 0.95);
+        border: 0;
+
+        div.product {
+        }
+
+
+        div.date {
+            .input {
+                height: 2.01em;
+                background: #fff;
+
+                span {
+                    background-position: right 7px;
+                    padding-top: 0.5em;
+                }
+            }
+        }
+
+
+        div.period {
+        }
+
+
+        div.adults {
+        }
+
+
+        div.children {
+        }
+
+
+        div.infants {
+        }
+
+        div.button {
+            a {
+
+            }
+        }
+
+
+        span.label {
+            color: #fff;
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 0.35em;
+        }
+
+        select {
+            font-family: inherit;
+            font-size: 16px;
+            height: 2.61em;
+            padding: 0.5em;
+            background: #fff;
+            border: 0;
+            border-radius: 3px;
+            width: 5em;
+            appearance: none;
+        }
+
+
+        span.input {
+            border: 0;
+
+            input {
+                font-family: inherit;
+                border: 0;
+                font-size: 16px;
+                height: 2.61em;
+                padding: 0 0.5em;
+                outline: 0;
+                border-radius: 3px;
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

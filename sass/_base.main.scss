@@ -23,8 +23,9 @@ main {
 
 
     &.main--internal {
-        margin: 0;
+        margin: 0 0 100px;
         padding-top: 65px;
+        margin-left: percentage(400 / 2560);
         float: left;
         text-align: left;
         width: percentage(1780 / 2560);

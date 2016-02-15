@@ -1,0 +1,64 @@
+/*------------------------------------*\
+    #BOOKEASY DETAILS GADGET
+\*------------------------------------*/
+
+// scss-lint:disable all
+
+
+#content div.BE.details-gadget {
+    color: #333;
+    font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    div.embedded-search {  }
+
+    div.priceGrid {
+        border: 0;
+
+        table {
+            thead {
+                td {
+                    background: #065931;
+                    background: rgba(6, 89, 49, 0.95);
+
+                    &.title {  }
+                    &.quantity {  }
+                    &.total {
+                        a {
+
+                        }
+                    }
+                    &.date {  }
+                }
+            }
+
+
+            tbody {
+                tr {
+                    &.odd {
+                        background: rgba(255, 255, 255, 0.8);
+                    }
+
+                    &.even {
+                        background: rgba(255, 255, 255, 0.9);
+                    }
+
+                    &.instant-confirmation {  }
+                    &.has-specials {  }
+                    &.has-last-minute {  }
+                }
+
+                td {
+                    background: none;
+
+                    &.name {  }
+                    &.quantity {  }
+                    &.total {  }
+                    &.price {  }
+                }
+            }
+        }
+    }
+
+}

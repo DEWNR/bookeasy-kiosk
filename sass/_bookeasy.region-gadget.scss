@@ -1,0 +1,188 @@
+/*------------------------------------*\
+    #BOOKEASY REGION GADGET
+\*------------------------------------*/
+
+// scss-lint:disable all
+
+
+#content div.BE.region-gadget {
+    color: #333;
+    font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    // The view tabs
+    div.tabs-group {
+        height: auto;
+        line-height: normal;
+
+        span.label {
+            display: none;
+        }
+
+        div.view-choice a {
+            background: #fff;
+            background: rgba(255, 255, 255, 0.90);
+            border: 0;
+            border-radius: 0;
+            color: #333;
+            margin: 0;
+            padding: 0.8em 1.4em;
+
+            &:nth-child(2) {
+                 border-top-left-radius: 3px    ;
+            }
+
+            &:last-child {
+                 border-top-right-radius: 3px;
+            }
+
+            &.current {
+                background: #08713e;
+                background: rgba(8, 113, 62, 0.95);
+                color: #fff;
+            }
+        }
+    }
+
+
+    // Embedded search gadget
+    div.embedded-search {
+
+        div.refineTools {
+            display: block !important;
+            padding: 0.5em 0 1.2em 0;
+
+            div.locationFilter {  }
+            div.accommTypes {
+                display: none;
+            }
+            div.facilities {
+                display: none;
+            }
+
+            div.maxPrice {
+                input {
+                    width: 5em;
+                }
+            }
+
+            div.nameFilter {
+                input {
+                    width: 15em;
+                }
+            }
+
+            div.sortBy {
+                .byWhich {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        div.showHideRefineTools {
+          display: none;
+        }
+    }
+
+
+    // Price view container
+    div.prices-grid {
+        border: 0;
+
+        table {
+            thead {
+                td {
+                    background: #065931;
+                    background: rgba(6, 89, 49, 0.95);
+
+                    &.label {  }
+                    &.total {  }
+                    &.date  {  }
+                }
+            }
+
+
+            tbody {
+                tr {
+                    &.odd {
+                        background: rgba(255, 255, 255, 0.8);
+                    }
+
+                    &.even {
+                        background: rgba(255, 255, 255, 0.9);
+                    }
+
+                    &.instant-confirmation {  }
+                    &.has-specials {  }
+                    &.has-last-minute {  }
+                }
+
+                td {
+                    background: none;
+
+                    &.property {
+                        background: linear-gradient(to right,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0) 61%);
+
+                        .name {
+                            color: #333;
+                            font-size: 26px;
+                            padding: 0.85em 0 0;
+                        }
+
+                        .address {
+                            color: #333;
+                            font-size: 16px;
+                        }
+
+                        div.thumb {
+                            border: 0;
+                            height: 96px;
+                            overflow: hidden;
+                            padding: 0;
+                            width: 150px;
+
+                            img {
+                                height: 150px;
+                                position: relative;
+                                top: -25px;
+                                width: 150px;
+                            }
+                        }
+                    }
+
+                    &.total {
+                        .im-pricebutton-label {
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
+                        span.price {
+                            font-size: 26px;
+
+                            .number {
+                                margin-top: -0.2em;
+                                display: block;
+                            }
+                        }
+
+                        .sold-out {
+                            span.price {
+                                font-size: 16px;
+                                padding: 0.8em 0.2em;
+                            }
+                        }
+                    }
+
+                    &.price {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+}

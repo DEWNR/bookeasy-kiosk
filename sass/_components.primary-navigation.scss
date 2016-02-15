@@ -10,6 +10,7 @@
 
 /*nav*/.primary-navigation {
     @extend %nav;
+    position: fixed;
 
     float: left;
     width: percentage(400 / 2560);
