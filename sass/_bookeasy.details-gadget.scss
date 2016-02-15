@@ -36,6 +36,8 @@
 
             tbody {
                 tr {
+                    border-bottom: 1px solid rgba(0, 0, 0, .03);
+
                     &.odd {
                         background: rgba(255, 255, 255, 0.8);
                     }
@@ -47,15 +49,61 @@
                     &.instant-confirmation {  }
                     &.has-specials {  }
                     &.has-last-minute {  }
-                }
 
-                td {
-                    background: none;
+                    td {
+                        background: none;
 
-                    &.name {  }
-                    &.quantity {  }
-                    &.total {  }
-                    &.price {  }
+                        &.name {
+                            padding: 5px 10px 5px 15px;
+
+                            a {
+                                color: #333;
+                                font-size: 26px;
+                            }
+                        }
+
+                        &.quantity {  }
+
+                        &.tour-date {
+                            label {
+                                color: #333;
+                                font-weight: 400;
+                            }
+                        }
+
+                        &.total {
+
+                            a {
+                                background-image: none;
+                                border: 0;
+                            }
+
+                            span.im-pricebutton-label {
+                                font-size: 16px;
+                                font-weight: 400;
+                            }
+
+                            span.im-pricebutton-amount {
+                                font-size: 26px;
+
+                                .number {
+                                    margin-top: -0.2em;
+                                    display: block;
+                                }
+                            }
+
+                            .sold-out {
+                                span.price {
+                                    font-size: 16px;
+                                    padding: 0.8em 0.2em;
+                                }
+                            }
+                        }
+
+                        &.price {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }

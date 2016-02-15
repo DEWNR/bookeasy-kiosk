@@ -105,6 +105,8 @@
 
             tbody {
                 tr {
+                    border-bottom: 1px solid rgba(0, 0, 0, .03);
+
                     &.odd {
                         background: rgba(255, 255, 255, 0.8);
                     }
@@ -152,12 +154,16 @@
                     }
 
                     &.total {
+                        width: 10%;
+
                         .im-pricebutton-label {
                             font-size: 16px;
                             font-weight: 400;
                         }
 
                         span.price {
+                            border: 0;
+                            background-image: none;
                             font-size: 26px;
 
                             .number {
