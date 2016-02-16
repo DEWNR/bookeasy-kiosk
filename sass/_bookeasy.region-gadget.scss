@@ -6,7 +6,7 @@
 
 
 #content div.BE.region-gadget {
-    color: #333;
+    color: $sagovau-color-text-base;
     font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -25,7 +25,7 @@
             background: rgba(255, 255, 255, 0.90);
             border: 0;
             border-radius: 0;
-            color: #333;
+            color: $sagovau-color-text-base;
             margin: 0;
             padding: 0.8em 1.4em;
 
@@ -38,8 +38,8 @@
             }
 
             &.current {
-                background: #08713e;
-                background: rgba(8, 113, 62, 0.95);
+                background: $sagovau-color-brand;
+                background: rgba($sagovau-color-brand, 0.95);
                 color: #fff;
             }
         }
@@ -127,13 +127,13 @@
                         background: linear-gradient(to right,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0) 61%);
 
                         .name {
-                            color: #333;
+                            color: $sagovau-color-text-base;
                             font-size: 26px;
                             padding: 0.85em 0 0;
                         }
 
                         .address {
-                            color: #333;
+                            color: $sagovau-color-text-base;
                             font-size: 16px;
                         }
 
@@ -174,7 +174,7 @@
 
                         &:hover {
                             span.price {
-                                background-color: #08713e;
+                                background-color: $sagovau-color-brand;
                             }
                         }
 
@@ -196,5 +196,68 @@
 
     }
 
+
+    div.map-container {
+        border: 0;
+        height: 623px;
+
+        div.product-list {
+            height: 624px;
+
+            div.map-sidebar-item {
+                border-bottom: 1px solid rgba(0, 0, 0, .03);
+                padding-left: 10px;
+
+                div.name {
+                    font-size: 20px;
+                    color: $sagovau-color-text-base;
+                }
+                div.location {
+                    color: $sagovau-color-text-base;
+                }
+                div.from-price {
+                    top: 20px;
+                }
+                div.rating {  }
+
+                &.odd {
+                    background: rgba(255, 255, 255, 0.8);
+                }
+
+                &.even {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+
+                &.instant-confirmation {  }
+                &.has-specials {  }
+                &.has-last-minute {  }
+            }
+
+            div.highlighted {
+                div.name {
+                    color: $sagovau-color-brand;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        div.map-window {
+            height: 623px;
+        }
+
+
+        div.mapInfoWindow {
+            h3.name {  }
+            div.address {  }
+            div.thumb {  }
+            div.details {  }
+            div.button {
+                a {
+                    background: $sagovau-color-brand;
+                    border: 0;
+                }
+            }
+        }
+    }
 
 }
