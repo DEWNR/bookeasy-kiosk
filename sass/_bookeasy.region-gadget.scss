@@ -172,6 +172,12 @@
                             }
                         }
 
+                        &:hover {
+                            span.price {
+                                background-color: #08713e;
+                            }
+                        }
+
                         .sold-out {
                             span.price {
                                 font-size: 16px;
