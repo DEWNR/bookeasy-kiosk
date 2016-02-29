@@ -151,6 +151,36 @@ div#wdOverlayContent.overlayMode {
             line-height: 1.2rem;
         }
     }
+
+    div.add-to-cart-form div.period {
+        display: none;
+    }
+
+    div.add-to-cart-form div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers label.bookingQuestion-answer,
+    div.item-details div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers label.bookingQuestion-answer {
+        padding: 15px;
+
+        input,
+        select {
+            color: #333;
+            font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            border: 1px solid #fff;
+            padding: .5em .5em;
+            margin-top: -.5em;
+
+            &:focus {
+                outline: 0;
+                border-color: #08713e;
+            }
+        }
+    }
+
+    div.add-to-cart-form div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers div.bookingQuestion-answer-message,
+    div.item-details div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers div.bookingQuestion-answer-message {
+
+        color: #08713e;
+    }
 }
 
 #wdOverlayBlockout {
