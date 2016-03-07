@@ -9,12 +9,12 @@
 $sagovau-path-fonts: "../fonts/" !default;
 
 
-// @font-face {
-//     font-family: Dewnrger;
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url(#{$sagovau-path-fonts}Dewnrger45Light.ttf);
-// }
+@font-face {
+    font-family: Dewnrger;
+    font-style: normal;
+    font-weight: 400;
+    src: url(#{$sagovau-path-fonts}Dewnrger55Roman.ttf);
+}
 //
 // @font-face {
 //     font-family: Dewnrger;

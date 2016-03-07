@@ -19,17 +19,33 @@
 
         padding: 0 80px;
         display: inline-block;
+
+        span {
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 275px;
+            top: 62px;
+            line-height: 0.9em;
+        }
+
+        &.quickjump-navigation__item--region {
+            span {
+                top: 40px;
+            }
+        }
     }
 
 
     /*a*/.quickjump-navigation__link {
         @extend %nav__link;
 
-        font-size: 30px;
+        text-align: center;
+        font-size: 60px;
 
         i {
             height: 320px;
-            margin: 0.4em auto 1em;
+            margin: -100px auto 1em;
             width: 320px;
         }
     }
