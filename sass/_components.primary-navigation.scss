@@ -2,7 +2,7 @@
     #PRIMARY-NAVIGATION
 \*------------------------------------*/
 
-
+// scss-lint:disable DuplicateProperty
 // Make sure the "module" extend-only component is included before this content.
 
 @import "components.nav";
@@ -10,25 +10,59 @@
 
 /*nav*/.primary-navigation {
     @extend %nav;
-    position: fixed;
 
+    position: fixed;
     float: left;
     width: percentage(400 / 2560);
+    background: #065931;
+    background: rgba(6, 89, 49, 0.95);
+    border-radius: 1em;
+    margin: 2em;
+    padding: 1em;
+
+    p {
+        color: #fff;
+        font-family: $sagovau-font-family-base;
+        padding: 1em 1em 0;
+        margin: 0;
+        font-weight: normal;
+        line-height: 1.5;
+    }
 }
 
     /*li*/.primary-navigation__item {
         @extend %nav__item;
+        text-align: left;
+        border-bottom: 1px solid #fff;
     }
 
 
     /*a*/.primary-navigation__link {
         @extend %nav__link;
 
-        font-size: 20px;
+        font-size: 30px;
+        padding: 1em 1em 0.8em 80px;
+        background-repeat: no-repeat;
+        background-size: 60px;
+        background-position: 0 50%;
+        line-height: 1em;
 
-        i {
-            height: 140px;
-            margin: 0.4em auto 1.5em;
-            width: 140px;
+        &.primary-navigation__link--home {
+            background-image: url("../images/innes-icon-home.svg");
+        }
+
+        &.primary-navigation__link--region {
+            background-image: url("../images/innes-icon-region.svg");
+        }
+
+        &.primary-navigation__link--entry {
+            background-image: url("../images/innes-icon-entry.svg");
+            background-size: 80px;
+            background-position: -10px 50%;
+        }
+
+        &:hover {
+            background-color: darken(#065931, 5%);
+            outline: 0;
         }
     }

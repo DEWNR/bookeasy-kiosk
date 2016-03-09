@@ -7,9 +7,9 @@
 
 #content div.BE.details-gadget {
     color: $sagovau-color-text-base;
-    font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+    font-family: "Frutiger LT Com", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 200;
 
     div.embedded-search {  }
 
@@ -39,7 +39,7 @@
                     border-bottom: 1px solid rgba(0, 0, 0, .03);
 
                     &.odd {
-                        background: rgba(255, 255, 255, 0.8);
+                        background: rgba(255, 255, 255, 0.85);
                     }
 
                     &.even {
@@ -55,6 +55,7 @@
 
                         &.name {
                             padding: 5px 10px 5px 15px;
+                            width: 800px;
 
                             a {
                                 color: $sagovau-color-text-base;
@@ -110,6 +111,26 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    div.priceGrid table tbody tr div.OperatorInfo {
+        padding: 0;
+        font-size: 16px;
+
+        span.OperatorItemHeading {
+            color: #333;
+            margin-bottom: .5em;
+        }
+
+        div.OperatorItemContent {
+            color: #333;
+            padding: 0;
+            margin-bottom: 1em;
+
+            p {
+                margin-top: 0;
             }
         }
     }

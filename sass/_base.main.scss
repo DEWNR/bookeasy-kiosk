@@ -25,10 +25,20 @@ main {
     &.main--internal {
         margin: 0 0 100px;
         padding-top: 65px;
-        margin-left: percentage(400 / 2560);
+        margin-left: percentage(700 / 2560);
         float: left;
         text-align: left;
-        width: percentage(1780 / 2560);
+        width: percentage(1480 / 2560);
+
+        @media (min-width: 1281px) {
+            margin-left: percentage(600 / 2560);
+            width: percentage(1580 / 2560);
+        }
+
+        @media (min-width: 2100px) {
+            margin-left: percentage(500 / 2560);
+            width: percentage(1680 / 2560);
+        }
     }
 }
 

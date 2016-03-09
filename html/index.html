@@ -75,7 +75,7 @@
         <!-- Scripts -->
         <!-- Avoid using unnecessary scripts in here; add them to the end of the body. If this can't be avoided, use inline or asynchronous scripts. -->
 
-        <script type="text/javascript" src="//fast.fonts.com/jsapi/e0cc203f-7221-4daf-a2d5-815483dba107.js" async></script>
+        <!-- <script type="text/javascript" src="//fast.fonts.com/jsapi/e0cc203f-7221-4daf-a2d5-815483dba107.js" async></script> -->
 
         <script type="text/javascript">
 
@@ -102,19 +102,23 @@
 
             <nav class="primary-navigation" data-ng-cloak data-ng-show="showNav">
 
+                <div id="toolbar-cart" data-ng-class="toolbarClass"></div>
+
                 <ul>
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#/home">Home<i class="icon-home"></i></a>
+                        <a class="primary-navigation__link  primary-navigation__link--home" href="#/home">Home</a>
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#/region">Book camping<i class="icon-region"></i></a>
+                        <a class="primary-navigation__link  primary-navigation__link--region" href="#/region">Camping</a>
                     </li>
 
                     <li class="primary-navigation__item">
-                        <a class="primary-navigation__link" href="#/tours/67456">Pay for your park entry<i class="icon-entry"></i></a>
+                        <a class="primary-navigation__link  primary-navigation__link--entry" href="#/tours/67456">Park entry</a>
                     </li>
                 </ul>
+
+                <p>Trouble with your booking? <br />please contact 8841 3400</p>
 
             </nav>
 
@@ -137,12 +141,6 @@
             </header><!-- /.site-header -->
 
             <!-- End site header -->
-
-
-
-
-
-            <div id="toolbar-cart"></div>
 
 
 
@@ -206,6 +204,7 @@
                 $scope.mode = "home";
                 $scope.mainClass = "main--home";
                 $rootScope.showNav = true;
+                $rootScope.toolbarClass = "toolbar--home";
 
                 // Listen for hash changes
                 $scope.$on("$locationChangeSuccess", function () {
@@ -217,16 +216,19 @@
                         $scope.mode = "details"
                         $scope.mainClass = "main--internal";
                         $rootScope.showNav = true;
+                        $rootScope.toolbarClass = "toolbar--internal";
 
                     } else if (hash == "/region") {
                         $scope.mode = "region";
                         $scope.mainClass = "main--internal";
                         $rootScope.showNav = true;
+                        $rootScope.toolbarClass = "toolbar--internal";
 
                     } else if (hash == "/home") {
                         $scope.mode = "home";
                         $scope.mainClass = "main--home";
                         $rootScope.showNav = false;
+                        $rootScope.toolbarClass = "toolbar--internal";
 
                     } else {
                         $location.path("home");

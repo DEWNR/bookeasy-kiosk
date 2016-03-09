@@ -32,12 +32,14 @@ $sagovau-nav-loaded: false !default; /* [1] */
             margin: 0;
             padding: 0;
             text-align: center;
+            list-style: none;
         }
 
 
         /*a*/%nav__link {
-            font-family: Dewnrger, "Frutiger W01", Helvetica, Arial, sans-serif;
+            font-family: "Dewnrger", "Frutiger LT Com", Helvetica, Arial, sans-serif;
             font-size: 20px;
+            font-weight: 200;
             color: #fff;
             display: block;
             text-decoration: none;
