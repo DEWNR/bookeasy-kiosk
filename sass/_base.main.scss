@@ -62,3 +62,59 @@ main {
         font-size: 140px;
     }
 }
+
+.main__caption {
+    color: #fff;
+    font-family: "Frutiger LT Com", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+}
+
+
+
+
+
+#toolbar-cart {
+    div.shopping-cart.BE.auto-collapse {
+        div.cartItems {
+            padding: 0;
+            border: 0;
+        }
+
+        div.checkout {
+            a {
+                background: none;
+                border: 0;
+                float: none;
+                display: inline;
+                margin: 0;
+                min-height: initial;
+
+                a {
+                    background: none;
+                    padding: 0;
+                    text-align: left;
+                }
+            }
+        }
+
+        div.totalDisplay {
+            background: none;
+            border: 0;
+
+            a {
+                &:after {
+                    content: 'View cart'
+                }
+
+                span {
+                    background: none;
+                }
+            }
+        }
+
+        .noItems {
+            display: none;
+        }
+
+    }
+}
