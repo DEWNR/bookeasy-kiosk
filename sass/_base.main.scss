@@ -81,29 +81,35 @@ main {
         }
 
         div.checkout {
+            display: block;
+
             a {
-                background: none;
+                background: 0 0;
                 border: 0;
                 float: none;
-                display: inline;
                 margin: 0;
                 min-height: initial;
-
-                a {
-                    background: none;
-                    padding: 0;
-                    text-align: left;
-                }
+                display: block;
+                font-weight: 200;
+                text-align: left;
+                font-size: 20px;
             }
         }
 
         div.totalDisplay {
-            background: none;
+            background: 0 0;
             border: 0;
+            width: 100%;
+            text-align: left;
 
             a {
+                width: auto;
+
                 &:after {
-                    content: 'View cart'
+                    content: 'View cart';
+                    padding: 0 0 0 50px;
+                    font-size: 20px;
+                    font-weight: 200;
                 }
 
                 span {

@@ -54,12 +54,29 @@
                         background: none;
 
                         &.name {
-                            padding: 5px 10px 5px 15px;
+                            padding: 10px 10px 8px 15px;
                             width: 800px;
+
+                            div.thumb {
+                                border: 0;
+                                height: 128px;
+                                overflow: hidden;
+                                padding: 0;
+                                width: 150px;
+
+                                img {
+                                    height: 150px;
+                                    width: 150px;
+                                }
+                            }
 
                             a {
                                 color: $sagovau-color-text-base;
                                 font-size: 26px;
+
+                                &.more {
+                                    display: none;
+                                }
                             }
                         }
 
@@ -118,6 +135,10 @@
     div.priceGrid table tbody tr div.OperatorInfo {
         padding: 0;
         font-size: 16px;
+        display: block!important;
+        float: left;
+        clear: none;
+        width: 70%;
 
         span.OperatorItemHeading {
             color: #333;
@@ -133,6 +154,44 @@
                 margin-top: 0;
             }
         }
+
+        .RoomConfig {
+            display: inline-block;
+
+            span.OperatorItemHeading {
+                display: none;
+            }
+        }
+
+        .MaxGuests {
+            display: inline-block;
+
+            span.OperatorItemHeading {
+                display: none;
+            }
+
+            div.OperatorItemContent {
+                display: inline;
+
+                &:before {
+                    content: ', '
+                }
+
+                &:after {
+                    content: ' guest maximum'
+                }
+            }
+        }
+
+        .Description {
+            span.OperatorItemHeading {
+                display: none;
+            }
+        }
     }
 
+}
+
+.main--tours #content div.BE.details-gadget div.priceGrid table tbody tr div.OperatorInfo {
+    display: none!important;
 }

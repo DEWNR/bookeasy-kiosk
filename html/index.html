@@ -66,8 +66,8 @@
 
         <!-- Stylesheets -->
 
-        <link href="css/main.css" rel="stylesheet">
-        <link href="css/bookeasy-kiosk.css" rel="stylesheet">
+        <link href="css/main.css?v=1" rel="stylesheet">
+        <link href="css/bookeasy-kiosk.css?v=1" rel="stylesheet">
 
         <!-- End Stylesheets -->
 
@@ -208,15 +208,20 @@
 
                 // Listen for hash changes
                 $scope.$on("$locationChangeSuccess", function () {
-                    var detailsRE = /\/[a-z]{5}\/(\d{5})/,
+                    var detailsRE = /\/([a-z]{5})\/(\d{5})/,
                         hash = $location.path();
 
                     if (detailsRE.test(hash)) {
-                        $scope.operatorID = hash.match(detailsRE)[1];
+                        hashMatch = hash.match(detailsRE);
+                        $scope.operatorID = hashMatch[2];
                         $scope.mode = "details"
                         $scope.mainClass = "main--internal";
                         $rootScope.showNav = true;
                         $rootScope.toolbarClass = "toolbar--internal";
+
+                        if (hashMatch[1] === 'tours') {
+                            $scope.mainClass = "main--internal  main--tours";
+                        }
 
                     } else if (hash == "/region") {
                         $scope.mode = "region";
@@ -253,8 +258,11 @@
                         period: 1,
                         showHoverInline: true,
                         showQuantity: false,
-                        collapseRefineTools: true,
-                        thumbsInGrid: false
+                        collapseRefineTools: false,
+                        thumbsInGrid: true,
+                        overlaySettings:     {
+                            width: '1000px',
+                        }
                     },
                     gadgetSelector = '.js-details-gadget';
 
