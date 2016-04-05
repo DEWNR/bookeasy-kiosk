@@ -5,7 +5,8 @@
 // scss-lint:disable all
 
 
-.checkout-cart {
+.checkout-cart,
+.checkout-complete {
     width: 1000px;
     margin: 0 auto;
 }
@@ -232,11 +233,43 @@
         right: 10px;
         padding-right: 30px;
     }
-
 }
 
 
+.checkout-complete {
+    div.bookingComplete,
+    div.booking-complete {
+        width: auto;
+        float: none;
+        border: 0;
+        border-radius: 0;
+        padding: 20px 20px 0;
+        background: rgba(255, 255, 255, .95);
+        min-height: 0;
+        margin: 0;
+        font-family: Helvetica,Arial,sans-serif;
+        color: #333;
+    }
 
+    div.bookingComplete a {
+        display: none;
+    }
+
+    div.booking-complete {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    div.booking-complete a {
+        display: block;
+        color: #333;
+    }
+
+    #confirm {
+        display: none;
+    }
+
+}
 
 
 .acceptCancellationPolicy .validationError {
