@@ -56,6 +56,7 @@
                         &.name {
                             padding: 10px 10px 8px 15px;
                             width: 800px;
+                            text-align: left;
 
                             div.thumb {
                                 border: 0;
@@ -73,6 +74,7 @@
                             a {
                                 color: $sagovau-color-text-base;
                                 font-size: 26px;
+                                text-align: left;
 
                                 &.more {
                                     display: none;

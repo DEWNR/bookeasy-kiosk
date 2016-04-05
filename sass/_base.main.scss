@@ -2,6 +2,8 @@
     #MAIN
 \*------------------------------------*/
 
+// scss-lint:disable all
+
 
 main {
     margin: 0 auto;
@@ -101,6 +103,7 @@ main {
             border: 0;
             width: 100%;
             text-align: left;
+            display: none;
 
             a {
                 width: auto;
