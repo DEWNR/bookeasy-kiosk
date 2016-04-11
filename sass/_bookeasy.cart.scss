@@ -9,6 +9,8 @@ div#wdOverlayContent.overlayMode {
     font-family: "Frutiger LT Com", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 200;
+    width: 1000px!important;
+    margin-left: -500px!important;
 
     div.BE.shopping-cart {
         div.item {
@@ -186,4 +188,34 @@ div#wdOverlayContent.overlayMode {
 #wdOverlayBlockout {
     opacity: 0.85!important;
     background: #000!important;
+}
+
+div#wdOverlayContent div.add-to-cart-form div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container, div#wdOverlayContent div.item-details div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+
+div#wdOverlayContent div.add-to-cart-form div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container label.bookingQuestion-title,
+div#wdOverlayContent div.item-details div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container label.bookingQuestion-title {
+    display: block;
+    width: 400px;
+    float: left;
+}
+
+div#wdOverlayContent.overlayMode div.add-to-cart-form div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers label.bookingQuestion-answer,
+div#wdOverlayContent.overlayMode div.item-details div.AdditionalData div.BookingQuestionsData div.booking-questions div.bookingQuestion div.bookingQuestionSets div.bookingQuestionSet div.bookingQuestionFields div.bookingQuestion-container div.bookingQuestion-answers label.bookingQuestion-answer {
+    padding: 0;
+}
+
+div.BE_cancellationPolicies {
+    max-height: 40em;
+    overflow: auto;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0 60px;
 }

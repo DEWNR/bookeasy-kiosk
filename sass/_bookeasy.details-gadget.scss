@@ -197,3 +197,12 @@
 .main--tours #content div.BE.details-gadget div.priceGrid table tbody tr div.OperatorInfo {
     display: none!important;
 }
+
+.main--tours #content div.BE.details-gadget div.search-gadget>div {
+    &.concessions,
+    &.students,
+    &.observers,
+    &.family {
+        display: none;
+    }
+}

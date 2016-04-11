@@ -259,10 +259,7 @@
                         showHoverInline: true,
                         showQuantity: false,
                         collapseRefineTools: false,
-                        thumbsInGrid: true,
-                        overlaySettings:     {
-                            width: '1000px',
-                        }
+                        thumbsInGrid: true
                     },
                     gadgetSelector = '.js-details-gadget';
 
@@ -282,7 +279,16 @@
                 var gadgetOptions = {
                         vcID:"188",
                         bookingURL:"http://www.environment.sa.gov.au/parks/Find_a_Park/Browse_by_region/Yorke_Peninsula/innes-national-park/kiosk/checkout",
-                        autoCollapse:true
+                        autoCollapse:true,
+                        overlaySettings:     {
+                            useBlockout:     true,
+                            overlayColour:   '#777',
+                            overlayOpacity:  0.5,
+                            innerBackground: '#FFF',
+                            zIndexLowest:    1000000,
+                            width:           1000,
+                            height:          false
+                        }
                     },
                     gadgetSelector = '#toolbar-cart';
 
