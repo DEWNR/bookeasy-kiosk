@@ -1,6 +1,6 @@
 {
-  "name": "dewnr-bookeasy-kiosk",
-  "description": "BookEasy kiosk site template for DEWNR's websites. Uses angular and bookeasy",
+  "name": "dewnr-innes-kiosk",
+  "description": "A streamlined implementation of DEWNR's booking system for Innes National Park.",
   "main": "gulpfile.js",
   "private": true,
   "devDependencies": {
@@ -27,7 +27,7 @@
     "yargs": "^3.29.0",
     "lodash": "^3.10.1"
   },
-  "repository": "dewnr/bookeasy-kiosk",
+  "repository": "dewnr/innes-kiosk",
   "license": "CC-BY-4.0",
   "author": "The DEWNR Internet Team <DEWNR.Internet@sa.gov.au>"
 }
