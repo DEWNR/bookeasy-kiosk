@@ -13,6 +13,7 @@ gulp.task('rev-css', function(){
   return gulp.src(path.join(config.root.dest,'/**/*.css'))
     .pipe(rev())
     .pipe(cssnano({discardComments: {removeAll: true}}))
+    // .pipe(replace('../images/innes-bg.jpg', 'file:///C:/Program Files (x86)/SiteKiosk/Html/kiosk/images/innes-bg.jpg'))
     .pipe(replace('../images/', ''))
     .pipe(replace('../fonts/', ''))
     .pipe(gulp.dest(config.root.dest))
