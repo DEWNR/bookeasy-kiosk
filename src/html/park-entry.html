@@ -1,0 +1,38 @@
+{% extends 'layouts/bookeasy.html' %}
+
+{% block content %}
+    <main class="main  main--internal  main--tours" role="main">
+        <div class="details-gadget">
+            <div id="content" class="js-details-gadget">
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+
+
+
+{% block bookeasy_javascript %}
+
+    <script>
+        (function () {
+            var bookingDate = new Date(),
+                gadgetOptions = {
+                    productID: '67456',
+                    type: 'tours',
+                    vcID: 188,
+                    defaultDate: bookingDate,
+                    period: 1,
+                    showHoverInline: true,
+                    showQuantity: false,
+                    collapseRefineTools: false,
+                    thumbsInGrid: true
+                },
+                gadgetSelector = '.js-details-gadget';
+
+            BE.gadget.details(gadgetSelector, gadgetOptions);
+        }());
+    </script>
+
+{% endblock %}

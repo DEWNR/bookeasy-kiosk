@@ -1,0 +1,58 @@
+{% extends 'layouts/bookeasy.html' %}
+
+{% block content %}
+    <main class="main  main--internal" role="main">
+        <div class="details-gadget">
+            <div id="content" class="js-details-gadget">
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+
+
+
+{% block bookeasy_javascript %}
+
+    <script>
+        if(window.location.hash) {
+            var aHash = window.location.hash.slice(1).split('/');
+            var sType = aHash[1];
+            var aValidTypes = ['accom','tours','events','carhire','packages'];
+
+            if(aHash.length && $.inArray( sType, aValidTypes) !== -1) {
+
+                var operatorIDregex = /^\d{5}$/;
+
+                // check if operatorID is 5 digits
+                if (operatorIDregex.test(aHash[2])) {
+
+                    bookeasyType = sType;
+                    operatorID = aHash[2];
+
+                }
+
+            }
+        }
+
+        (function () {
+            var bookingDate = new Date(),
+                gadgetOptions = {
+                    productID: operatorID,
+                    type: bookeasyType,
+                    vcID: 188,
+                    defaultDate: bookingDate,
+                    period: 1,
+                    showHoverInline: true,
+                    showQuantity: false,
+                    collapseRefineTools: false,
+                    thumbsInGrid: true
+                },
+                gadgetSelector = '.js-details-gadget';
+
+            BE.gadget.details(gadgetSelector, gadgetOptions);
+        }());
+    </script>
+
+{% endblock %}

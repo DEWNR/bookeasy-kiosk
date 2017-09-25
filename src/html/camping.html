@@ -1,0 +1,54 @@
+{% extends 'layouts/bookeasy.html' %}
+
+{% block content %}
+    <main class="main  main--internal" role="main">
+        <div class="gadget">
+            <div id="content" class="js-region-gadget">
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+
+
+
+{% block bookeasy_javascript %}
+
+    <script>
+
+        (function () {
+            var bookingDate = new Date(),
+                gadgetOptions = {
+                    vcID:188,
+                    accomOnlyMode:true,
+                    collapseRefineTools:true,
+                    customMapIcons: {
+                        'accom':{
+                            icon:'//www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/c16a6c2a-2cdc-4f08-96b9-f1c11eb6f349/npsa-marker-general.png',
+                            pinpoint: [13,45],
+                            size: [26,45]
+                        }
+                    },
+                    //defaultDate: bookingDate,
+                    defaultSort:'name',
+                    disabledTypes:["tours","events","carhire","packages"],
+                    itemDetailPageURL: './camping-details.html',
+                    enableRegionSearch:false,
+                    ignoreSearchCookie:true,
+                    limitLocations: ['Innes National Park'],
+                    period:1,
+                    showAllAccom:true,
+                    showList:false,
+                    showLocationFilter:false
+                },
+                gadgetSelector = '.js-region-gadget',
+                locationFilter = ['Innes National Park'];
+
+            BE.gadget.region(gadgetSelector, gadgetOptions);
+
+        }());
+
+    </script>
+
+{% endblock %}
