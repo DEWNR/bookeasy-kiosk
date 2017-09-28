@@ -5,7 +5,6 @@ var browserSync  = require('browser-sync')
 var gulp         = require('gulp')
 var gulpif       = require('gulp-if')
 var handleErrors = require('../lib/handleErrors')
-var htmlmin      = require('gulp-htmlmin')
 var path         = require('path')
 var render       = require('gulp-nunjucks-render')
 
@@ -31,7 +30,6 @@ var htmlTask = function(cb) {
         }
         }))
         .on('error', handleErrors)
-        .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
         .pipe(gulp.dest(paths.dest))
         .pipe(browserSync.stream())
 }
