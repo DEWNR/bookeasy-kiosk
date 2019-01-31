@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "A streamlined implementation of DEWNR's booking system for Innes National Park.",
   "engines": {
-    "node": ">=0.12.0 ~5.9.0",
+    "node": ">=0.12.0 ~6.13.1",
     "npm": ">=2.14.12 ~3.7.3"
   },
   "repository": {
