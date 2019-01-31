@@ -1,4 +1,7 @@
-{% set bookeasy_key = '7e5893292834eb2b34cd1d9b11437df9' %}
+{#  local: d5192d41822d0c987a0610af120d29bf  #}
+{#  parks: e65c851dcdc492aaa7db1e22e2bd2283  #}
+{% set bookeasy_key = 'd5192d41822d0c987a0610af120d29bf' %}
+
 
 <!doctype html>
 <html>
@@ -58,7 +61,7 @@
 
         <script>
             (function () {
-                var gadgetOptions = {
+                var cartGadgetOptions = {
                         vcID:"188",
                         bookingURL:"https://payments.environment.sa.gov.au",
                         autoCollapse:true,
@@ -74,7 +77,7 @@
                     },
                     gadgetSelector = '#toolbar-cart';
 
-                BE.gadget.cart(gadgetSelector, gadgetOptions);
+                BE.gadget.cart(gadgetSelector, cartGadgetOptions);
             }());
         </script>
 
