@@ -50,6 +50,13 @@
 
         }());
 
+        $w.event.subscribe('region.refinetools.built', function() {
+
+            // remove option to select 0 adults
+            $('.adults select option[value="0"]').hide();
+
+        });
+
     </script>
 
 {% endblock %}

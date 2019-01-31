@@ -33,6 +33,19 @@
 
             BE.gadget.details(gadgetSelector, gadgetOptions);
         }());
+
+        //subscribing to events needs to occur before gadgets finish loading
+        $w.event.subscribe('grid.rendered', function() {
+
+            // remove option to select 0 adults
+            $('.adults select option[value="0"]').hide();
+
+            $('.adults').hide();
+            $('.infants').hide();
+            $('.children').hide();
+            $('.concession').hide();
+
+        });
     </script>
 
 {% endblock %}
